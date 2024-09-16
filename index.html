@@ -86,11 +86,36 @@
                 </div>
                 
                 <!-- Water Usage Reduction Planner -->
-                <div class="tool">
-                    <h3>Water Usage Reduction Planner</h3>
-                    <p>Develop a step-by-step plan to reduce water consumption over time. Set goals, track your progress, and see the impact of your water-saving efforts.</p>
-                    <a href="#">Create Your Plan</a>
-                </div>
+<div class="tool">
+    <h3>Water Usage Reduction Planner</h3>
+    <p>Develop a step-by-step plan to reduce water consumption over time. Set goals, track your progress, and see the impact of your water-saving efforts.</p>
+    <button id="plannerButton">Create Your Plan</button>
+</div>
+
+<!-- Water Usage Reduction Planner Modal -->
+<div id="plannerModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Water Usage Reduction Planner</h2>
+        <form id="plannerForm">
+            <label for="goal">Goal:</label>
+            <input type="text" id="goal" placeholder="Describe your water-saving goal" required>
+            
+            <label for="action">Actions:</label>
+            <textarea id="action" placeholder="List actions you'll take to achieve your goal" rows="4" required></textarea>
+            
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" required>
+            
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" required>
+            
+            <button type="submit">Save Plan</button>
+        </form>
+        <div id="plannerResult"></div>
+    </div>
+</div>
+
 
                 <!-- Rainwater Harvesting Calculator -->
                 <div class="tool">

@@ -95,3 +95,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 });
+// Get modal elements
+const plannerButton = document.getElementById('plannerButton');
+const plannerModal = document.getElementById('plannerModal');
+const closeBtn = document.querySelector('.close-btn');
+const plannerForm = document.getElementById('plannerForm');
+const plannerResult = document.getElementById('plannerResult');
+
+// Show the modal
+plannerButton.onclick = function() {
+    plannerModal.style.display = 'block';
+}
+
+// Close the modal
+closeBtn.onclick = function() {
+    plannerModal.style.display = 'none';
+}
+
+// Close the modal if outside the modal content
+window.onclick = function(event) {
+    if (event.target == plannerModal) {
+        plannerModal.style.display = 'none';
+    }
+}
+
+// Handle form submission
+plannerForm.onsubmit = function(event) {
+    event.preventDefault();
+    
+    const goal = document.getElementById('goal').value;
+    const actions = document.getElementById('action').value;
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
+    
+    // Display the results or save them to a server
+    plannerResult.innerHTML = `
+        <h3>Your Water Usage Reduction Plan</h3>
+        <p><strong>Goal:</strong> ${goal}</p>
+        <p><strong>Actions:</strong> ${actions}</p>
+        <p><strong>Start Date:</strong> ${startDate}</p>
+        <p><strong>End Date:</strong> ${endDate}</p>
+    `;
+    
+    // Optionally, hide the modal after submission
+    plannerModal.style.display = 'none';
+}
